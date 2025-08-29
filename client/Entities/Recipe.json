@@ -1,0 +1,70 @@
+{
+  "name": "Recipe",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "레시피 제목"
+    },
+    "description": {
+      "type": "string",
+      "description": "레시피 설명"
+    },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "재료 목록"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "조리 순서"
+    },
+    "cook_time": {
+      "type": "number",
+      "description": "조리 시간 (분)"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "쉬움",
+        "보통",
+        "어려움"
+      ],
+      "description": "난이도"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "태그"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "이미지 URL"
+    }
+  },
+  "required": [
+    "title",
+    "ingredients",
+    "steps",
+    "cook_time",
+    "difficulty"
+  ]
+}

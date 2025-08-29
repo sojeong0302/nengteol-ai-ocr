@@ -1,0 +1,55 @@
+{
+  "name": "CartItem",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "상품명"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "produce",
+        "meat",
+        "dairy",
+        "pantry",
+        "frozen",
+        "other"
+      ],
+      "description": "카테고리"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "필요 수량"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "개",
+        "kg",
+        "g",
+        "L",
+        "mL",
+        "팩",
+        "봉",
+        "단"
+      ],
+      "description": "단위"
+    },
+    "note": {
+      "type": "string",
+      "description": "메모"
+    },
+    "is_purchased": {
+      "type": "boolean",
+      "default": false,
+      "description": "구매 완료 여부"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "quantity",
+    "unit"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "FoodItem",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "식재료 이름"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "produce",
+        "meat",
+        "dairy",
+        "pantry",
+        "frozen",
+        "other"
+      ],
+      "description": "식재료 카테고리"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "수량"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "개",
+        "kg",
+        "g",
+        "L",
+        "mL",
+        "팩",
+        "봉",
+        "단"
+      ],
+      "description": "단위"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date",
+      "description": "구매일"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "유통기한"
+    },
+    "storage_type": {
+      "type": "string",
+      "enum": [
+        "fridge",
+        "freezer",
+        "pantry"
+      ],
+      "default": "fridge",
+      "description": "보관 방법"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "used",
+        "expired"
+      ],
+      "default": "active",
+      "description": "상태"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "quantity",
+    "unit",
+    "expiry_date"
+  ]
+}

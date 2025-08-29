@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npm start)",
+      "Bash(move Layout.js src/)",
+      "Bash(move:*)",
+      "Bash(move Components src/components)",
+      "Bash(set PORT=3001)",
+      "Bash(cross-env:*)",
+      "Bash(npm uninstall:*)",
+      "Read(c:\\Users\\gicon\\Pictures\\Screenshots/**)",
+      "Read(c:\\Users\\gicon\\Pictures\\Screenshots/**)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
