@@ -1,7 +1,7 @@
-const clovaService = require('./clovaService');
-const ocrService = require('./ocrService');
-const objectStorageService = require('./objectStorageService');
-const aiClassificationService = require('./aiClassificationService');
+import { clovaService } from './clovaService.js';
+import { ocrService } from './ocrService.js';
+import { objectStorageService } from './objectStorageService.js';
+import {aiClassificationService} from './aiClassificationService.js';
 
 class ReceiptService {
   constructor() {
@@ -206,4 +206,4 @@ class ReceiptService {
   }
 }
 
-module.exports = new ReceiptService();
+export const receiptService = new ReceiptService();

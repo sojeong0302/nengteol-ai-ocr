@@ -27,6 +27,21 @@ const ReceiptUpload = ({ onUploadComplete }) => {
             if (result.success) {
                 console.log(`${result.foodItems.length}개의 식품을 발견했습니다:`, result.foodItems);
                 alert(`영수증 분석 완료!\n${result.foodItems.length}개의 식품을 발견했습니다.`);
+                const user_id = 1;
+                for (const food of result.foodItems) {
+                    try {
+                        const response = await fetch("http://localhost:5000/api/foods", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ user_id, name: food.name, quantity: food.quantity, quantity: food.category }),
+                        });
+
+                        const data = await response.json();
+                        console.log("응답:", data);
+                    } catch (error) {
+                        console.error("요청 실패:", error);
+                    }
+                }
             } else {
                 console.error('업로드 실패:', result.error);
                 alert('영수증 분석에 실패했습니다: ' + result.error);

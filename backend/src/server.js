@@ -25,6 +25,7 @@ app.use(`/docs`,
     swaggerUi.serve, swaggerUi.setup(swaggerSpec)
 );
 
+// 라우트
 app.use('/api', router);
 
 app.get("/", (req, res) => {

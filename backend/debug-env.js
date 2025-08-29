@@ -1,5 +1,7 @@
 // 환경변수 디버깅 스크립트
-require('dotenv').config();
+import { configDotenv } from "dotenv";
+
+configDotenv();
 
 console.log('=== 환경변수 디버깅 ===');
 console.log('NODE_ENV:', process.env.NODE_ENV);

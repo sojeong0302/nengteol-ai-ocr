@@ -7,7 +7,7 @@
 // - 대량 품목은 청크로 분할 호출
 // - '|| true' 같은 버그 제거 (전부 식품으로 분류되지 않도록)
 // ------------------------------------------------------------
-const axios = require('axios');
+import axios from 'axios';
 
 class AIClassificationService {
   constructor() {
@@ -307,4 +307,4 @@ ${itemListText}
     return '기타';
   }
 }
-module.exports = new AIClassificationService();
+export const aiClassificationService = new AIClassificationService();

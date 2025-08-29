@@ -1,5 +1,5 @@
-const axios = require('axios');
-const FormData = require('form-data');
+import axios from 'axios';
+import FormData from 'form-data';
 
 class OCRService {
   constructor() {
@@ -259,4 +259,4 @@ class OCRService {
   }
 }
 
-module.exports = new OCRService();
+export const ocrService = new OCRService();

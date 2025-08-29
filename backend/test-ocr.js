@@ -1,6 +1,7 @@
-// OCR API 테스트 스크립트
-require('dotenv').config();
-const ocrService = require('./services/ocrService');
+import { configDotenv } from 'dotenv';
+import ocrService from './services/ocrService.js';
+
+configDotenv();
 
 async function testOCR() {
   console.log('OCR 테스트 시작...');
