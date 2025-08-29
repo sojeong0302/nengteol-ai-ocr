@@ -53,7 +53,7 @@ export default function MyFridge() {
     useEffect(() => {
         (async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/foods/0");
+                const res = await axios.get("http://localhost:5000/api/foods/1");
                 setFoods(Array.isArray(res.data?.data) ? res.data.data : []);
             } catch (err) {
                 console.error("데이터 가져오기 실패:", err);

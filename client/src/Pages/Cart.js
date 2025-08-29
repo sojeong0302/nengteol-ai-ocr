@@ -24,7 +24,7 @@ export default function Cart() {
         (async () => {
             try {
                 // TODO: userId나 cartId가 있다면 0 대신 실제 값 사용
-                const res = await axios.get(`http://localhost:5000/api/carts/${0}`);
+                const res = await axios.get(`http://localhost:5000/api/carts/${1}`);
                 const rows = Array.isArray(res.data?.data) ? res.data.data : [];
                 const mapped = rows.map(mapCartRow);
                 setCartItems(mapped);
