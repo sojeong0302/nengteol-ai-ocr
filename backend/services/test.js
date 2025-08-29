@@ -1,4 +1,4 @@
-﻿const svc = require("./aiClassificationService");
+﻿import svc from './aiClassificationService.js'
 
 (async () => {
   const items = [

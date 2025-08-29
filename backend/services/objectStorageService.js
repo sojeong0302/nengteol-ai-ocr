@@ -1,5 +1,5 @@
-const AWS = require('aws-sdk');
-const { v4: uuidv4 } = require('uuid');
+import AWS from "aws-sdk";
+import { v4 as uuidv4 } from "uuid";
 
 class ObjectStorageService {
   constructor() {
@@ -142,4 +142,4 @@ class ObjectStorageService {
   }
 }
 
-module.exports = new ObjectStorageService();
+export const objectStorageService = new ObjectStorageService();

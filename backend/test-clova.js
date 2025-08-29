@@ -1,6 +1,7 @@
 // 클로바 AI 분류 테스트 스크립트
-require('dotenv').config();
-const aiClassificationService = require('./services/aiClassificationService');
+import { configDotenv } from 'dotenv';
+import aiClassificationService from './services/aiClassificationService.js';
+configDotenv();
 
 async function testClovaClassification() {
   console.log('=== 클로바 AI 분류 테스트 ===');

@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 class ClovaService {
   constructor() {
@@ -158,4 +158,4 @@ class ClovaService {
   }
 }
 
-module.exports = new ClovaService();
+export const clovaService = new ClovaService();
