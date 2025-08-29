@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 const DiaryItem = ({ id, emotionId, content, createdAt }) => {
     const navigate = useNavigate();
     const goDetail = () => {
-        navigate(`/diary/${id}`);
+        navigate(`/DDiary/${id}`);
     };
     useEffect(() => {
         console.log("출력" + createdAt);
