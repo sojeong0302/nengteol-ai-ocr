@@ -101,26 +101,30 @@ export default function MyFridge() {
         .filter((f) => (filterKey ? normalizeCategory(f.category) === filterKey : true))
         .map((f) => ({ ...f, category: normalizeCategory(f.category) }));
 
-    const handleUpdate = async (food) => {
-        try {
-            await axios.delete("http://localhost:5000/api/foods", {
-                data: {
-                    user_id: 1,
-                    name: food.name,
-                    count: 1, // 1개 줄이기
-                },
-            });
-
-            // 상태 업데이트: 수량 -1, 0이면 제거
-            setFoods(
-                (prev) =>
-                    prev
-                        .map((f) => (f._id === food._id ? { ...f, quantity: f.quantity - 1 } : f))
-                        .filter((f) => f.quantity > 0) // 수량 0은 리스트에서 제거
-            );
-        } catch (err) {
-            console.error("수정 실패:", err);
-        }
+    // const handleUpdate = async (food) => {
+    //     // try {
+    //     //     await axios.delete("http://localhost:5000/api/foods", {
+    //     //         data: {
+    //     //             user_id: 1,
+    //     //             name: food.name,
+    //     //             count: 1, // 1개 줄이기
+    //     //         },
+    //     //     });
+    //     //     // 상태 업데이트: 수량 -1, 0이면 제거
+    //     //     setFoods(
+    //     //         (prev) =>
+    //     //             prev
+    //     //                 .map((f) => (f._id === food._id ? { ...f, quantity: f.quantity - 1 } : f))
+    //     //                 .filter((f) => f.quantity > 0) // 수량 0은 리스트에서 제거
+    //     //     );
+    //     // } catch (err) {
+    //     //     console.error("수정 실패:", err);
+    //     // }
+    //     alert("추가 되었습니다.");
+    // };
+    const handleUpdate = (food) => {
+        // 상태 업데이트: 해당 food의 quantity +1
+        setFoods((prev) => prev.map((f) => (f._id === food._id ? { ...f, quantity: f.quantity + 1 } : f)));
     };
 
     const handleinc = async (food) => {
@@ -240,8 +244,8 @@ export default function MyFridge() {
                         <FoodItemCard
                             key={food._id ?? idx}
                             item={food}
-                            onUse={handleUpdate} // ✅ 수정(= 수량 감소 API)
-                            onDelete={handleinc} // ✅ 삭제(완전 삭제)
+                            onUse={handleUpdate} // ✅ 추가
+                            onDelete={handleinc} // ✅ 사용
                         />
                     ))}
                     {filteredFoods.length === 0 && (
