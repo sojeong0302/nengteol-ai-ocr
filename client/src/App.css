@@ -704,7 +704,8 @@ body {
 .page-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, #00d4aa 0%, #00a3ff 100%);
+    background-color: #00bfe0;
+
     border-radius: var(--radius-2xl);
     display: flex;
     align-items: center;

@@ -170,7 +170,7 @@ export default function MyFridge() {
             {/* Header */}
             <div className="page-header">
                 <div className="flex justify-between items-start">
-                    <div className="flex gap-3 ">
+                    <div className="flex gap-3">
                         <div className="page-icon">
                             <Refrigerator className="w-6 h-6 text-white" />
                         </div>

@@ -76,8 +76,8 @@ export default function Cart() {
                             <ShoppingCart className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold text-gray-800">장바구니</h1>
-                            <p className="text-gray-500">불러오는 중…</p>
+                            <h1 className="text-xl font-bold text-secondary">장바구니</h1>
+                            <p className="text-secondary text-xs">불러오는 중…</p>
                         </div>
                         <button
                             className="btn btn-outline flex items-center gap-2"
@@ -96,13 +96,13 @@ export default function Cart() {
         <div className="space-y-6">
             {/* Header */}
             <div className="page-header">
-                <div className="flex justify-between items-star">
+                <div className="flex gap-3 justify-center">
                     <div className="page-icon">
                         <ShoppingCart className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-800">장바구니</h1>
-                        <p className="text-gray-500">{cartItems.length}개 상품</p>
+                        <h1 className="text-xl font-bold text-secondary">장바구니</h1>
+                        <p className="text-secondary text-xs">{cartItems.length}개 상품</p>
                     </div>
                     <button className="btn btn-outline flex items-center gap-2" onClick={() => navigate("/CartUpload")}>
                         장바구니 업로드
@@ -127,16 +127,18 @@ export default function Cart() {
                                 <div className="flex items-center gap-2">
                                     <button
                                         onClick={() => handleDelete(item)}
-                                        className="btn btn-outline btn-sm w-8 h-8 p-0 flex items-center justify-center"
+                                        className="btn btn-outline btn-sm w-9 h-9 p-0 flex items-center justify-center"
                                     >
-                                        <Minus className="w-4 h-4" />
+                                        -
                                     </button>
+
                                     <span className="w-8 text-center font-medium">{item.quantity}</span>
+
                                     <button
                                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                         className="btn btn-outline btn-sm w-8 h-8 p-0 flex items-center justify-center"
                                     >
-                                        <Plus className="w-4 h-4" />
+                                        +
                                     </button>
                                 </div>
 
