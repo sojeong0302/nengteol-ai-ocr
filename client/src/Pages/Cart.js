@@ -102,7 +102,7 @@ export default function Cart() {
                     </div>
                     <div>
                         <h1 className="text-xl font-bold text-secondary">장바구니</h1>
-                        <p className="text-secondary text-xs">{cartItems.length}개 상품</p>
+                        <p className="text-secondary text-md">{cartItems.length}개의 상품</p>
                     </div>
                     <button className="btn btn-outline flex items-center gap-2" onClick={() => navigate("/CartUpload")}>
                         장바구니 업로드
@@ -119,17 +119,17 @@ export default function Cart() {
                     <div key={item.id} className="card">
                         <div className="flex items-center justify-between">
                             <div>
-                                <h3 className="font-semibold text-lg text-gray-800">{item.name}</h3>
-                                <p className="text-sm text-gray-500">{item.category}</p>
+                                <h3 className="font-semibold text-lg text-secondary">{item.name}</h3>
+                                <p className="text-sm text-secondary">{item.category}</p>
                             </div>
 
                             <div className="flex items-center gap-3">
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 ">
                                     <button
                                         onClick={() => handleDelete(item)}
-                                        className="btn btn-outline btn-sm w-9 h-9 p-0 flex items-center justify-center"
+                                        className="btn btn-outline btn-sm w-8 h-8 p-0 flex items-center justify-center"
                                     >
-                                        -
+                                        <div className="text-secondary">&lt;</div>
                                     </button>
 
                                     <span className="w-8 text-center font-medium">{item.quantity}</span>
@@ -138,7 +138,7 @@ export default function Cart() {
                                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                         className="btn btn-outline btn-sm w-8 h-8 p-0 flex items-center justify-center"
                                     >
-                                        +
+                                        <div className="text-secondary">&gt;</div>
                                     </button>
                                 </div>
 

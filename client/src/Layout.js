@@ -54,7 +54,7 @@ export default function Layout({ children }) {
                     <div className="flex items-center gap-1 justify-center">
                         <h1
                             onClick={() => navigate("/")}
-                            className="text-lg font-bold text-secondary flex items-center gap-1"
+                            className="text-xl font-bold text-secondary flex items-center gap-1"
                         >
                             <ChefHat className="w-6 h-6" />
                             가난한 요리사들

@@ -176,7 +176,7 @@ export default function MyFridge() {
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-secondary">냉장고</h1>
-                            <p className="text-secondary text-xs">보유 식재료 {foods.length}개</p>
+                            <p className="text-secondary text-md">재료 {foods.length}개</p>
                         </div>
                     </div>
 

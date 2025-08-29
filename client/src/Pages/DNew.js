@@ -27,7 +27,6 @@ const DNew = () => {
 
     return (
         <div className="flex flex-col gap">
-            <Header title="레시피 등록" />
             <Editor onSubmit={onSubmit} />
         </div>
     );

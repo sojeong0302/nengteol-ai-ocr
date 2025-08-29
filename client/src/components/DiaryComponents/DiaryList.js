@@ -72,15 +72,6 @@ const DiaryList = ({ data }) => {
     return (
         <div className="DiaryList">
             <div className="menu_wrapper">
-                <div className="left_col">
-                    <select value={sortType} onChange={onChangeSortType}>
-                        {sortOptionList.map((it, idx) => (
-                            <option key={idx} value={it.value}>
-                                {it.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
                 <div className="right_col">
                     <Button type={"positive"} text={"새 일기 쓰기"} onClick={onClickNew} />
                 </div>

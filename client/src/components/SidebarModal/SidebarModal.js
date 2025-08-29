@@ -74,12 +74,12 @@ export default function SidebarModal({ open, onClose, title = "메뉴", children
             >
                 {title && <h2 className="text-xl font-bold mb-4 text-center">{title}</h2>}
 
-                <div className="text-sm ">{children}</div>
+                <div className=" text-lg">{children}</div>
 
                 <div className="mt-6 flex justify-center">
                     <button
                         onClick={onClose}
-                        className="text-sm px-6 py-2 rounded-lg transition text-white"
+                        className="text-lg px-6 py-2 rounded-lg transition text-white"
                         style={{ backgroundColor: "#9ab4da", border: "none" }}
                     >
                         닫기
