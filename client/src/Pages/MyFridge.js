@@ -105,7 +105,7 @@ export default function MyFridge() {
         try {
             await axios.delete("http://localhost:5000/api/foods", {
                 data: {
-                    user_id: 0,
+                    user_id: 1,
                     name: food.name,
                     count: 1, // 1개 줄이기
                 },
@@ -127,7 +127,7 @@ export default function MyFridge() {
         try {
             await axios.post("http://localhost:5000/api/foods", {
                 data: {
-                    user_id: 0,
+                    user_id: 1,
                     name: food.name,
                     count: 1, // 1개 줄이기
                 },

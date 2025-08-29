@@ -28,7 +28,7 @@ export default function FoodUpload({ apiUrl }) {
         }
 
         const payload = {
-            user_id: 0,
+            user_id: 1,
             name: name.trim(),
             quantity,
             category,

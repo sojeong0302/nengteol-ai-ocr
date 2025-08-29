@@ -52,7 +52,7 @@ const DiaryList = ({ data }) => {
     useEffect(() => {
         (async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/reviews/user/${1}`);
+                const res = await axios.get(`http://localhost:5000/api/reviews/user/${0}`);
 
                 const rows = Array.isArray(res.data?.data) ? res.data.data : [];
                 // 최소 매핑: DiaryItem이 기대하는 키로만 맞춤

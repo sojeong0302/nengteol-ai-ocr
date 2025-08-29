@@ -12,7 +12,7 @@ const FoodItemCard = ({ item, onUse, onDelete }) => {
                 if (!confirmDelete) return; // 취소 시 종료
             }
             await axios.delete("http://localhost:5000/api/foods", {
-                data: { name: item.name, user_id: 0 },
+                data: { name: item.name, user_id: 1 },
             });
             alert(`${item.name}이(가) 삭제 완료 되었습니다.`);
             window.location.reload();

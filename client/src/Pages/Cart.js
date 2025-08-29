@@ -48,7 +48,25 @@ export default function Cart() {
     };
 
     const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const handleDelete = () => [];
+    const handleDelete = async (item) => {
+        try {
+            const res = await axios.delete("http://localhost:5000/api/carts", {
+                data: {
+                    user_id: 1, // 현재 로그인 유저 ID (예시)
+                    name: item.name, // 삭제할 상품명
+                    count: 1, // 삭제할 수량
+                },
+            });
+
+            console.log("삭제 성공:", res.data);
+
+            // 프론트 상태에서도 제거 (낙관적 업데이트)
+            setCartItems((prev) => prev.filter((cartItem) => cartItem.name !== item.name));
+        } catch (err) {
+            console.error("삭제 실패:", err);
+            console.log(item.name);
+        }
+    };
     if (loading) {
         return (
             <div className="space-y-6">
@@ -108,7 +126,7 @@ export default function Cart() {
                             <div className="flex items-center gap-3">
                                 <div className="flex items-center gap-2">
                                     <button
-                                        onClick={handleDelete}
+                                        onClick={() => handleDelete(item)}
                                         className="btn btn-outline btn-sm w-8 h-8 p-0 flex items-center justify-center"
                                     >
                                         <Minus className="w-4 h-4" />
@@ -122,12 +140,12 @@ export default function Cart() {
                                     </button>
                                 </div>
 
-                                <button
+                                {/* <button
                                     onClick={() => updateQuantity(item.id, 0)}
                                     className="btn btn-outline btn-sm text-red-600 hover:bg-red-50"
                                 >
                                     <Trash2 className="w-4 h-4" />
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>
@@ -136,7 +154,7 @@ export default function Cart() {
 
             {/* 합계/주문 버튼 */}
 
-            <button className="btn btn-primary flex w-">등록하기</button>
+            {/* <button className="btn btn-primary flex w-">등록하기</button> */}
 
             {/* Empty State */}
             {cartItems.length === 0 && (

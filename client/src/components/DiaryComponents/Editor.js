@@ -17,7 +17,7 @@ const Editor = ({ initData, onSubmit }) => {
         setScore(scoreFromOrder); // 첫번째=1, 두번째=2 ... 다섯번째=5
     };
     const payload = {
-        user_id: 0,
+        user_id: 1,
         recipe_name: name,
         feedback: feedback,
         score: score,
