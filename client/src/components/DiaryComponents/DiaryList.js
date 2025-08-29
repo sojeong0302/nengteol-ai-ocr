@@ -48,6 +48,7 @@ const DiaryList = ({ data }) => {
         copyList.sort(compare);
         setSortedData(copyList);
     }, [reviews, sortType]);
+
     useEffect(() => {
         (async () => {
             try {

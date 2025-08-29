@@ -36,7 +36,6 @@ const FoodItemCard = ({ item, onUse, onDelete }) => {
 
                     <div className="flex items-center gap-4 text-sm text-gray-600">
                         <span className="badge badge-gray">{item.category}</span>
-
                         <span>{item.quantity}개</span>
                     </div>
                 </div>

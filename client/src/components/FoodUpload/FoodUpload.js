@@ -6,7 +6,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function FoodUpload() {
+export default function FoodUpload({ apiUrl }) {
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [ice, setIce] = useState(false);
@@ -37,7 +37,7 @@ export default function FoodUpload() {
         };
 
         try {
-            const res = await axios.post("http://localhost:5000/api/foods", payload, {
+            const res = await axios.post(apiUrl, payload, {
                 headers: { "Content-Type": "application/json" },
             });
             console.log("등록 성공:", res.data);
@@ -52,7 +52,7 @@ export default function FoodUpload() {
 
     return (
         <div className="space-y-6 p-4 flex flex-col">
-            <h2 className="text-xl font-bold">식재료 등록</h2>
+            <h2 className="text-xl font-bold">등록</h2>
             <div className="flex flex-col gap-6">
                 {/* 기본 인풋 */}
                 <Input

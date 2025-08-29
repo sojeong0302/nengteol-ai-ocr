@@ -58,6 +58,7 @@ export default function MyFridge() {
             } catch (err) {
                 console.error("데이터 가져오기 실패:", err);
                 setFoods([]);
+                console.log(foods);
             } finally {
                 setLoading(false);
             }
@@ -103,6 +104,28 @@ export default function MyFridge() {
     const handleUpdate = async (food) => {
         try {
             await axios.delete("http://localhost:5000/api/foods", {
+                data: {
+                    user_id: 0,
+                    name: food.name,
+                    count: 1, // 1개 줄이기
+                },
+            });
+
+            // 상태 업데이트: 수량 -1, 0이면 제거
+            setFoods(
+                (prev) =>
+                    prev
+                        .map((f) => (f._id === food._id ? { ...f, quantity: f.quantity - 1 } : f))
+                        .filter((f) => f.quantity > 0) // 수량 0은 리스트에서 제거
+            );
+        } catch (err) {
+            console.error("수정 실패:", err);
+        }
+    };
+
+    const handleinc = async (food) => {
+        try {
+            await axios.post("http://localhost:5000/api/foods", {
                 data: {
                     user_id: 0,
                     name: food.name,
@@ -218,7 +241,7 @@ export default function MyFridge() {
                             key={food._id ?? idx}
                             item={food}
                             onUse={handleUpdate} // ✅ 수정(= 수량 감소 API)
-                            onDelete={console.log("삭제")} // ✅ 삭제(완전 삭제)
+                            onDelete={handleinc} // ✅ 삭제(완전 삭제)
                         />
                     ))}
                     {filteredFoods.length === 0 && (

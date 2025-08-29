@@ -11,9 +11,8 @@ import DNew from "./Pages/DNew";
 import CartUpload from "./Pages/CartUpload";
 import DDiary from "./Pages/DDiary";
 import "./App.css";
-
-export const DiaryStateContext = createContext(null);
-export const DiaryDispatchContext = createContext(null);
+export const DiaryStateContext = createContext([]);
+export const DiaryDispatchContext = createContext(() => {});
 
 function App() {
     return (
@@ -92,7 +91,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="/DDiary"
+                    path="/DDiary/:id"
                     element={
                         <Layout>
                             <DDiary />

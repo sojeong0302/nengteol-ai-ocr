@@ -6,9 +6,11 @@ import { getFormattedDate, setPageTitle } from "../util";
 import Viewer from "../components/DiaryComponents/Viewer";
 import { useEffect } from "react";
 
-const Diary = () => {
+const DDiary = () => {
     const { id } = useParams();
+    console.log(id);
     const data = useDiary(id);
+
     const navigate = useNavigate();
 
     const goBack = () => {
@@ -42,4 +44,4 @@ const Diary = () => {
     }
 };
 
-export default Diary;
+export default DDiary;
