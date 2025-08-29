@@ -57,7 +57,7 @@ const DiaryList = ({ data }) => {
                 // 최소 매핑: DiaryItem이 기대하는 키로만 맞춤
                 const normalized = rows.map((r) => ({
                     id: r._id ?? r.id,
-                    emotionId: Number(r.score),
+                    emotionId: r.score,
                     content: r.feedback ?? "",
                     date: r.date ?? r.created_at, // "YYYY-MM-DD" or ISO 지원
                 }));
