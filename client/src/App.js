@@ -10,6 +10,7 @@ import DHome from "./Pages/DHome";
 import DNew from "./Pages/DNew";
 import CartUpload from "./Pages/CartUpload";
 import DDiary from "./Pages/DDiary";
+import RecipesShow from "./Pages/RecipesShow";
 import "./App.css";
 
 export const DiaryStateContext = createContext(null);
@@ -96,6 +97,14 @@ function App() {
                     element={
                         <Layout>
                             <DDiary />
+                        </Layout>
+                    }
+                />
+                <Route
+                    path="/RecipesShow"
+                    element={
+                        <Layout>
+                            <RecipesShow />
                         </Layout>
                     }
                 />
